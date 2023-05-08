@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.WebUI", "BkEmployeePro\BkEmployeePro.WebUI.csproj", "{143DEB96-6B83-447E-941B-0E2DD418C06D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalLibs", "ExternalLibs", "{68691A45-048B-4DEE-922F-577A4C01B5FA}"
+	ProjectSection(SolutionItems) = preProject
+		..\ExternalLibs\ceTe.DynamicPDF.40.dll = ..\ExternalLibs\ceTe.DynamicPDF.40.dll
+		..\ExternalLibs\ceTe.DynamicPDF.40.xml = ..\ExternalLibs\ceTe.DynamicPDF.40.xml
+		..\ExternalLibs\Kendo.Mvc.dll = ..\ExternalLibs\Kendo.Mvc.dll
+		..\ExternalLibs\Kendo.Mvc.xml = ..\ExternalLibs\Kendo.Mvc.xml
+		..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Common.dll = ..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Common.xml = ..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Common.xml
+		..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Data.dll = ..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Data.dll
+		..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Data.xml = ..\ExternalLibs\Microsoft.Practices.EnterpriseLibrary.Data.xml
+		..\ExternalLibs\Microsoft.Practices.ServiceLocation.dll = ..\ExternalLibs\Microsoft.Practices.ServiceLocation.dll
+		..\ExternalLibs\Microsoft.Practices.Unity.dll = ..\ExternalLibs\Microsoft.Practices.Unity.dll
+		..\ExternalLibs\Microsoft.Practices.Unity.Interception.DLL = ..\ExternalLibs\Microsoft.Practices.Unity.Interception.DLL
+		..\ExternalLibs\Microsoft.Practices.Unity.xml = ..\ExternalLibs\Microsoft.Practices.Unity.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.Domain", "BkEmployeePro.Domain\BkEmployeePro.Domain.csproj", "{4DB9902E-D2D6-464C-9278-22DDD84A210F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.DAL", "BkEmployeePro.DAL\BkEmployeePro.DAL.csproj", "{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.BLL", "BkEmployeePro.BLL\BkEmployeePro.BLL.csproj", "{F316A74F-7A10-4663-9A9F-D4848469DF38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{143DEB96-6B83-447E-941B-0E2DD418C06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143DEB96-6B83-447E-941B-0E2DD418C06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143DEB96-6B83-447E-941B-0E2DD418C06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143DEB96-6B83-447E-941B-0E2DD418C06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB9902E-D2D6-464C-9278-22DDD84A210F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB9902E-D2D6-464C-9278-22DDD84A210F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB9902E-D2D6-464C-9278-22DDD84A210F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB9902E-D2D6-464C-9278-22DDD84A210F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F316A74F-7A10-4663-9A9F-D4848469DF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F316A74F-7A10-4663-9A9F-D4848469DF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F316A74F-7A10-4663-9A9F-D4848469DF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F316A74F-7A10-4663-9A9F-D4848469DF38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

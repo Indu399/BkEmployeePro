@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+@model BkEmployeePro.Models.Login
+
+<h3 style="margin-top:35px;">Enter Email and Password</h3>
+<form id="LoginForm">
+    <div class="row" style="margin-right: 162px; margin-left: -7px; width: 30%; margin:3px; margin-top:10px; padding-top:200px">
+        <div class="col-sm-6 col-xs-12 form-group">
+        <div class="row" style="margin-bottom:10px;">
+            <label class="col-sm-4 col-xs-8">Email Id</label>
+            <div class="col-sm-8 col-xs-2" style="margin-bottom:2px;">
+                @Html.TextBoxFor(u => u.UserName, new { @class = "form-control", placeholder = "Enter Email" })
+            </div>
+        </div>
+
+        <div class="row">
+            <label class="col-sm-4 col-xs-12">Password</label>
+            <div class="col-sm-8 col-xs-12" style="margin-bottom:8px;">
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "Enter Password" })
+            </div>
+        </div>
+    </div>
+    <input id="btnLogin" type="button" class="btn btn-secondary label-sm label-white" value="Log In" style="margin-top:10px;">
+        </div>
+    <br />
+    <br />
+</form>
+
+<script>
+    $(function () {
+        $("#btnLogin").click(function () {
+            debugger;
+            var form = $("#LoginForm");
+            $.ajax({
+                url: '@Url.Action("Login", "Login")',
+                type: "POST",
+                data: form.serialize(),
+                success: function (data) {
+                    alert(data.message);
+                    if (data.Status == 0) {
+                        window.location.href = '@Url.Action("Index", "Employee")';
+                    }
+                    return false;
+                }
+            });
+        });
+    });
+</script>
+

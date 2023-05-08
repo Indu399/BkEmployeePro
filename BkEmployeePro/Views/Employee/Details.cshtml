@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+@model BkEmployeePro.Models.UserInput
+
+
+@using (Html.BeginForm("Details", "Employee", FormMethod.Post))
+{
+    <div class="page-head" style="padding-top:150px">
+        <h4 class="">Details Employee</h4>
+        <form>
+            @*@Html.HiddenFor(u => u.EID)*@
+           <div class="row">
+            <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Name</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.EID)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Name</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.Name)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Age</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.Age)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Qualification</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.Qualification)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Position</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.Position)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">JoiningDate</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.JoiningDate)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Salary</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.DisplayFor(u => u.salary)
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </form>
+<a href="@Url.Action("Index","Employee")">Back to List</a>
+    </div>
+
+}
+

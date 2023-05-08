@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/views/shared/_layout.cshtml";
+}
+
+@model BkEmployeePro.Models.UserInput
+
+<div class="page-head" style="padding-top:200px">
+    <h4 class="">Add Employee</h4>
+    <form id="createForm">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">Name</label>
+                    <div class="col-sm-8 col-xs-12">
+                        @Html.TextBoxFor(u => u.Name, new { @class = "form-control", placeholder = "Enter Name" })
+                        @Html.ValidationMessageFor(u => u.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">Age</label>
+                    <div class="col-sm-8 col-xs-12">
+                        @Html.TextBoxFor(u => u.Age, new { @class = "form-control", placeholder = "Enter Age" })
+                        @Html.ValidationMessageFor(u => u.Age, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">Qualification</label>
+                    <div class="col-sm-8 col-xs-12">
+
+                        @Html.DisplayFor(u => u.Qualification)
+                        <div class="form-group">
+                            @Html.DropDownListFor(u => u.Qualification, new List<SelectListItem>
+                                    {
+                                    new SelectListItem {Value = "",Text = "Select" },
+                                    new SelectListItem{Text="B.Tech" },
+                                    new SelectListItem{Text="MCA" },
+                                    new SelectListItem{Text="CA" }
+                                    },
+
+                                    new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Qualification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">Position</label>
+                    <div class="col-sm-8 col-xs-12">
+                        @Html.DisplayFor(u => u.Position)
+                        @Html.DropDownListFor(u => u.Position, new List<SelectListItem>
+                      {
+                          new SelectListItem {Text="Select" , Value="Select" },
+                          new SelectListItem {Text=".Net Developer",Value=".Net Developer" },
+                          new SelectListItem {Text="IOS Developer",Value="IOS Developer" },
+                          new SelectListItem {Text="Android Developer",Value="Android Developer" },
+                          },
+                          new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(u => u.Position, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">JoiningDate</label>
+                    <div class="col-sm-8 col-xs-12">
+                        @Html.TextBoxFor(u => u.JoiningDate, new { @class = "form-control", placeholder = "Enter JoiningDate" })
+                        @Html.ValidationMessageFor(u => u.JoiningDate, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 form-group">
+                <div class="row">
+                    <label class="col-sm-4 col-xs-12">Salary</label>
+                    <div class="col-sm-8 col-xs-12">
+                        @Html.TextBoxFor(u => u.salary, new { @class = "form-control", placeholder = "Enter Salary" })
+                        @Html.ValidationMessageFor(u => u.salary, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        @*<input type="button" value="Submit" id="saveemployee">*@
+        <button type="submit" class="btn btn-sm btn-danger" id="saveemployee">Submit</button>
+
+    </form>
+
+
+
+</div>
+
+<script src="~/Content/DatePicker.js"></script>
+<script>
+    $(function () {
+        $("#JoiningDate").datepicker({
+        });
+
+    });
+</script>
+<script>
+
+    $("#saveemployee").click(function (e) {
+        debugger;
+        // if ($('#formstudents').validate().form()) {
+
+        var form = $("#createForm");
+        debugger;
+        $.ajax({
+            url: '@Url.Action("Create", "Employee")',
+            type: "POST",
+            data: form.serialize(),
+            //beforeSend: function () {
+            //    $("#SAVEStudnets").attr('disabled', true).attr('value', 'Please Wait...');
+            //},
+            success: function (data) {
+                debugger;
+                if (data.status == 0) {
+                    //CloseModalPopUp();
+                    //window.location.href = '@Url.Action("Index", "Students")';
+                    // Display a success toast, with a title
+                    ShowToasterMessage('success', 'Employee Added Successfully!', 'Success');
+                    return false;
+                }
+
+                if (data.status == 1) {
+                    ShowToasterMessage('error', data.Message, 'Error');
+                  //  $("#sub").attr('disabled', false).attr('value', 'Save');
+                    return false;
+                }
+            }
+        });
+        // }
+        e.preventDefault();
+    });
+</script>
+
+
+
+
+

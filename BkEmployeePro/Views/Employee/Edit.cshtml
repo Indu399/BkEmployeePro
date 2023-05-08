@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout= "~/views/shared/_layout.cshtml";
+}
+
+@model BkEmployeePro.Models.UserInput
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post,new { id="Editform"}))
+{
+    <div class="page-head" id="popupmodel" style="padding-top:200px">
+        <h4 class="">Update Employee</h4>
+        <form>
+            @Html.HiddenFor(u => u.EID)
+            <div class="row">
+
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Name</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.Name, new { @class = "form-control", placeholder = "Enter Name" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Age</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.Age, new { @class = "form-control", placeholder = "Enter Age" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Qualification</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.Qualification, new { @class = "form-control", placeholder = "Enter Qualification" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Position</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.Position, new { @class = "form-control", placeholder = "Enter Position" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">JoiningDate</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.JoiningDate, new { @class = "form-control", placeholder = "Enter JoiningDate" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 form-group">
+                    <div class="row">
+                        <label class="col-sm-4 col-xs-12">Salary</label>
+                        <div class="col-sm-8 col-xs-12">
+                            @Html.TextBoxFor(u => u.salary, new { @class = "form-control", placeholder = "Enter Salary" })
+                        </div>
+                    </div>
+                </div>
+              </div>
+         </form>
+      <button type="submit" class="btn btn-success" id="sub">Submit</button>
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+        $("#sub").click(function () {
+
+            $("#popupmodel").modal('show')
+            {
+
+            }
+        });
+    });
+</script>
+<script>
+    $("#sub").click(function (e) {
+        debugger;
+        // if ($('#formstudents').validate().form()) {
+
+        var form = $("#Editform");
+        debugger;
+        $.ajax({
+            url: '@Url.Action("Edit", "Employee")',
+            type: "POST",
+            data: form.serialize(),
+            success: function (data) {
+                debugger;
+                if (data.status == 0) {
+                    
+                    ShowToasterMessage('success', 'Employee Updated Successfully!', 'Success');
+                    return false;
+                }
+
+                if (data.status == 1) {
+                    ShowToasterMessage('error', data.Message, 'Error');
+                    return false;
+                }
+            }
+        });
+        // }
+        e.preventDefault();
+    });
+</script>
+
+
+
+
