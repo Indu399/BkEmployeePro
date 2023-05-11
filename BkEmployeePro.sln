@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.WebUI", "BkEmployeePro\BkEmployeePro.WebUI.csproj", "{143DEB96-6B83-447E-941B-0E2DD418C06D}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.DAL", "BkEmployeePro.DAL\BkEmployeePro.DAL.csproj", "{7EE0CB4B-A1F5-4862-BEC9-9FEE16B37762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BkEmployeePro.BLL", "BkEmployeePro.BLL\BkEmployeePro.BLL.csproj", "{F316A74F-7A10-4663-9A9F-D4848469DF38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCCD7B9B-18EA-4A5A-8DF9-F9B919CBDE02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,5 +54,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C1B1495-2A97-4A44-920C-6964264BE38E}
 	EndGlobalSection
 EndGlobal
