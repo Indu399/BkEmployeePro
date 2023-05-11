@@ -6,9 +6,6 @@ using System.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 
 
-
-
-
 namespace BkEmployeePro.DAL
 {
     public class EmployeeDAL : IEmployeeDAL
@@ -50,11 +47,6 @@ namespace BkEmployeePro.DAL
         }
 
         #endregion
-
-
-
-
-
 
 
         #region GetEmployeeByEID
@@ -141,8 +133,7 @@ namespace BkEmployeePro.DAL
 
 
         #endregion
-
-
+ 
         #region DeleteEmployee
         public int DeleteEmployee(int EID)
         {
